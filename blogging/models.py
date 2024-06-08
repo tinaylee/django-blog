@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(blank=True)
@@ -11,12 +12,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    posts = models.ManyToManyField(Post, blank=True, related_name='categories')
+    posts = models.ManyToManyField(Post, blank=True, related_name="categories")
 
     class Meta:
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = "Categories"
+
     def __str__(self):
         return self.name
