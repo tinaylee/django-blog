@@ -4,7 +4,6 @@ from blogging.models import Post, Category
 import datetime
 
 
-
 class PostTestCase(TestCase):
     fixtures = [
         "blogging_test_fixture.json",
